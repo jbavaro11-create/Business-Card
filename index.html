@@ -155,6 +155,20 @@
       background: rgba(201,169,110,0.07);
     }
     .social-btn svg { width: 15px; height: 15px; fill: currentColor; }
+
+    .services { margin-bottom: 4px; }
+    .services-label {
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c9a96e;
+      margin-bottom: 12px;
+    }
+    .services-list { display: flex; flex-direction: column; gap: 10px; }
+    .service-row { display: flex; align-items: center; gap: 10px; }
+    .service-dot { color: #c9a96e; font-size: 1.1rem; line-height: 1; }
+    .service-en { font-size: 0.95rem; font-weight: 300; color: #e8d5b0; letter-spacing: 0.04em; }
     .save-btn {
       width: 100%;
       padding: 15px;
@@ -192,13 +206,13 @@
           <div class="icon">
             <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
           </div>
-          <span class="contact-text">(516) 666-2530</span>
+          <span class="contact-text">(347) 460-6490</span>
         </a>
         <a class="contact-row" href="mailto:jbavaro11@gmail.com">
           <div class="icon">
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </div>
-          <span class="contact-text">jbavaro11@gmail.com</span>
+          <span class="contact-text" style="font-size:0.78rem;word-break:break-all;">jbavaro11@gmail.com</span>
         </a>
       </div>
       <div class="socials">
@@ -207,7 +221,26 @@
           LinkedIn
         </a>
       </div>
-      <button class="save-btn" onclick="saveContact()">&#x2193; Save Contact</button>
+      <div style="height:6px;"></div>
+      <div class="services">
+        <div class="services-label">Services</div>
+        <div class="services-list">
+          <div class="service-row">
+            <span class="service-dot">·</span>
+            <span class="service-en">Fund Accounting</span>
+          </div>
+          <div class="service-row">
+            <span class="service-dot">·</span>
+            <span class="service-en">Consulting</span>
+          </div>
+          <div class="service-row">
+            <span class="service-dot">·</span>
+            <span class="service-en">Bookkeeping</span>
+          </div>
+        </div>
+      </div>
+      <div style="height:20px;"></div>
+            <button class="save-btn" onclick="saveContact()">&#x2193; Save Contact</button>
     </div>
   </div>
   <script>
@@ -215,12 +248,13 @@
       const vcard = [
         'BEGIN:VCARD',
         'VERSION:3.0',
-        'FN:Jake Bavaro',
-        'N:Bavaro;Jake;;;',
+        'FN:Jake Bavaro CPA MBA',
+        'N:Bavaro;Jake;;CPA MBA;',
         'TITLE:Accountant and Consultant',
         'TEL;TYPE=CELL:(347) 460-6490',
         'EMAIL:jbavaro11@gmail.com',
         'URL:https://www.linkedin.com/in/jake-bavaro',
+        'PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAB4AFADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwC7cr+7/OtnTFxZpx2rNu0/d/nWxp0DvZoQcDFZoCG/x5dcxdL/AKYn1rrJ7QyLya56+h8u+RaVncd1YsJGNgpfLHpUqL+7GfSlj2SDKOrAddpzUNlpFWSPCk1UjYsSuK2DDuGKova+VKMd6pCYyHR/PO5nIzUOp6QLZAyNXSWdoSq5Y1Hq9j8qkMSPegRUu1/dfnXRaZERYRZ/u1hXqFYRketb9jOosItxxhQKuLJsMcYBrjPEt6ljciQjc38K+tde0obIB71xF3ZLq3i+4S5YmG1VcJ65GaJPQcI8zscxfarfXvyyztsz9xOB+VQW9zNbP5kRmiYfxITg16bFp+nwJhLWIZ4+7UctpaqmEhRR9Kyc0dSosxfDviA3t0bO6ZTIRmNwMbvY+9b00Ra4jUdzXC3dutp4mRrZdmZEYAeua7/ObuP61pCzRz1FZmzb2+yMVW1WPEYatGM/IKhvbY3Ee0HFXZIjcy9XCm3yKjmWY6crREggUmpNm3xVtJ44tMG8gYWstkN6mTplzLJIVfqOKzTBcrq+o3VsMNIUClh2A5x+NXtO2/amK9zmrDuqXLKOT6UpPQ0w6V9SpaS6iA327YAPu4xn9KqTWd1dP5rXAZTzsJYY+mCKuS3DyuRF5eQCCrdRUdlJLHKbYtuOM/dIArO522VrFG/sA81nKSQ0LEZ6+4z+Nb6HdJExPPBNUQn2iXaTwpz061d2kMvHFXSuctdx2W50NucoKsZxVOyz5YqeZ9uK2bsjCJzV65MYBqtq77bKLkj/APVU979wVleJJ/KtYAe5/pUkvYn0I7pM80+9kZNSBXriotBkjSEySOqKBkljgCq76ja32uJDaSedgEll+6AB60+W4Qdti/5scrl0ADdCelV5btIWIULv74pIbcXtrHcrw0i/N9e9Ph0obt7nIHftWHLfQ7+d21GW90ttG9zcnbHxk+mTgfzraZwyAjB7g1wnjHUApXToOFXDSf0H9apaT4ovNOhWCRVnhHQMcFfYGuiNOyOOcuZnq9ndxqmGYCo9U1W2gQZkXJ9688uPFAuImNvujf8Aut/jXN32p3VxLmSRsjsaU+xMXZnql6CFGRXLeMdRjV4bRBulVQ7HsueldjqYBjBFeW6vKZ9Wu5Cc5lIH0HAqoK71EyrPczzjEsjMo6LngfhWr4YjunuXFk5jlYqu/GcLnJ/kBWK1d34DtNtjJckcyPgH2FasEbdpHHYwvG425BYDOQKgm320Mt9NIyqqEsp4BH0raCjBOBmuR8eah5VpFYRn5pjvk/3R0H4n+VRGKTKcm1qcRdTvdXMlxKcvIxY1AFG6nnpShcCtLEDdvpS5zw4DAetOPAqMk0NID2DUWK2Zc9FBNeTOxd5HJ5Zia9P8RzrFoFzIDj5CB9Tx/WvLV+6frSiDGt1r1LwtD5Hh6045ZNx/GvLj1FereH5A+h2JXp5K5okNGm5CJufhVGST6V5LrV82parPdE/KzYQeijpXfeML/wCyaFKqth5iIh9D1/SvMzzx+dEUJiDk5/KloNMJ75qhCueQo7mmt701GzMfYU5ulIZ33i+Yx+HYoyeZJQPy5rgoz94e9dP40ui8lraA8RoXb6n/AOsK5WNv37D1FC0ESnqK9I8GT+docKZ5QlPyJrzeux8DXaQ2t8JGwsX7w+wxz/KhjRV8dX3m6klqD8tuuW/3j/8AWxXMrnHPU9afeXL32oS3D/xuXP19PwqNjTQhrGmM3FKTUTHikxhbnMrmpjVe2P7x6sHpQtgNLxJPv1q4PXaQg/AVioT9oXI60UUmJFrNSwX0tpBcxR/8vEYjP55ooqgIU+Vcd6QmiigCMmo3NFFSxiW332qx2ooprYGf/9k=',
         'END:VCARD'
       ].join('\r\n');
       const blob = new Blob([vcard], { type: 'text/vcard' });
